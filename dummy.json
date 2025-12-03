@@ -1,0 +1,111 @@
+{
+  "kindergarten": "Solsikken Barnehage",
+  "departments": [
+    {
+      "departmentId": "A1",
+      "name": "Blåklokka",
+      "children": [
+        { "childId": "B101", "name": "Emma Hansen", "dob": "2019-03-14" },
+        { "childId": "B102", "name": "Noah Berg", "dob": "2018-11-02" },
+        { "childId": "B103", "name": "Sofia Løvik", "dob": "2019-07-21" },
+        { "childId": "B104", "name": "Oliver Nystuen", "dob": "2018-05-09" },
+        { "childId": "B105", "name": "Aisha Malik", "dob": "2020-01-05" },
+        { "childId": "B106", "name": "Lucas Ahmed", "dob": "2019-08-12" },
+        { "childId": "B107", "name": "Amalie Røed", "dob": "2018-12-18" },
+        { "childId": "B108", "name": "Elias Solberg", "dob": "2019-09-03" },
+        { "childId": "B109", "name": "Nora Wium", "dob": "2018-07-30" },
+        { "childId": "B110", "name": "Jonas Arentz", "dob": "2019-02-11" }
+      ],
+      "employees": [
+        { "employeeId": "A4001", "name": "Lise Øverland", "position": "Pedagogisk leder" },
+        { "employeeId": "A4002", "name": "Mari Fjeld", "position": "Assistent" }
+      ]
+    },
+    {
+      "departmentId": "A2",
+      "name": "Solstrålen",
+      "children": [
+        { "childId": "B201", "name": "Liam Olsen", "dob": "2019-05-16" },
+        { "childId": "B202", "name": "Selma Johansen", "dob": "2018-09-28" },
+        { "childId": "B203", "name": "Ahmad Khan", "dob": "2020-02-03" },
+        { "childId": "B204", "name": "Ida Vik", "dob": "2019-01-17" },
+        { "childId": "B205", "name": "Markus Lunde", "dob": "2018-06-22" },
+        { "childId": "B206", "name": "Aurora Stein", "dob": "2019-10-05" },
+        { "childId": "B207", "name": "Hina Farooq", "dob": "2020-03-14" },
+        { "childId": "B208", "name": "Tobias Krogh", "dob": "2019-04-11" },
+        { "childId": "B209", "name": "Oskar Molvik", "dob": "2018-08-26" },
+        { "childId": "B210", "name": "Milena Aas", "dob": "2019-12-07" }
+      ],
+      "employees": [
+        { "employeeId": "A4003", "name": "Tone Almlid", "position": "Pedagogisk leder" },
+        { "employeeId": "A4004", "name": "Stian Hov", "position": "Assistent" }
+      ]
+    }
+  ],
+  "users": [
+    { "userId": "U1001", "name": "Kari Hansen", "role": "user", "childId": "B101", "phone": "91325487", "address": "Solberglia 12, 0678 Oslo" },
+    { "userId": "U1002", "name": "Martin Hansen", "role": "user", "childId": "B101", "phone": "92811344", "address": "Solberglia 12, 0678 Oslo" },
+
+    { "userId": "U1003", "name": "Linda Berg", "role": "user", "childId": "B102", "phone": "93488721", "address": "Vestliveien 4, 0980 Oslo" },
+    { "userId": "U1004", "name": "Thomas Berg", "role": "user", "childId": "B102", "phone": "94177233", "address": "Vestliveien 4, 0980 Oslo" },
+
+    { "userId": "U1005", "name": "Eline Løvik", "role": "user", "childId": "B103", "phone": "95832411", "address": "Lørenveien 51, 0585 Oslo" },
+    { "userId": "U1006", "name": "Henrik Løvik", "role": "user", "childId": "B103", "phone": "94763210", "address": "Lørenveien 51, 0585 Oslo" },
+
+    { "userId": "U1007", "name": "Ingrid Nystuen", "role": "user", "childId": "B104", "phone": "98345521", "address": "Rosenholmveien 9, 1252 Oslo" },
+    { "userId": "U1008", "name": "Mats Nystuen", "role": "user", "childId": "B104", "phone": "91500327", "address": "Rosenholmveien 9, 1252 Oslo" },
+
+    { "userId": "U1009", "name": "Fatima Malik", "role": "user", "childId": "B105", "phone": "94721083", "address": "Tonsenhagen 22, 0596 Oslo" },
+    { "userId": "U1010", "name": "Omar Malik", "role": "user", "childId": "B105", "phone": "99230111", "address": "Tonsenhagen 22, 0596 Oslo" },
+
+    { "userId": "U1011", "name": "Sara Ahmed", "role": "user", "childId": "B106", "phone": "96744128", "address": "Økernveien 123, 0579 Oslo" },
+    { "userId": "U1012", "name": "Jamal Ahmed", "role": "user", "childId": "B106", "phone": "95278144", "address": "Økernveien 123, 0579 Oslo" },
+
+    { "userId": "U1013", "name": "Maria Røed", "role": "user", "childId": "B107", "phone": "92883476", "address": "Nordstrandveien 72, 1164 Oslo" },
+    { "userId": "U1014", "name": "Knut Røed", "role": "user", "childId": "B107", "phone": "92211854", "address": "Nordstrandveien 72, 1164 Oslo" },
+
+    { "userId": "U1015", "name": "Silje Solberg", "role": "user", "childId": "B108", "phone": "95477120", "address": "Furuset Allé 3, 1053 Oslo" },
+    { "userId": "U1016", "name": "Daniel Solberg", "role": "user", "childId": "B108", "phone": "98652219", "address": "Furuset Allé 3, 1053 Oslo" },
+
+    { "userId": "U1017", "name": "Rania Wium", "role": "user", "childId": "B109", "phone": "91123489", "address": "Holmliaåsen 18, 1255 Oslo" },
+    { "userId": "U1018", "name": "Patrick Wium", "role": "user", "childId": "B109", "phone": "95569337", "address": "Holmliaåsen 18, 1255 Oslo" },
+
+    { "userId": "U1019", "name": "Cecilie Arentz", "role": "user", "childId": "B110", "phone": "93011574", "address": "Ekebergveien 40, 1178 Oslo" },
+    { "userId": "U1020", "name": "Jørgen Arentz", "role": "user", "childId": "B110", "phone": "98032111", "address": "Ekebergveien 40, 1178 Oslo" },
+
+    { "userId": "U2001", "name": "Julie Olsen", "role": "user", "childId": "B201", "phone": "94828110", "address": "Skovveien 9, 0257 Oslo" },
+    { "userId": "U2002", "name": "Erik Olsen", "role": "user", "childId": "B201", "phone": "92100455", "address": "Skovveien 9, 0257 Oslo" },
+
+    { "userId": "U2003", "name": "Helene Johansen", "role": "user", "childId": "B202", "phone": "99321145", "address": "Bygdøy Allé 42, 0265 Oslo" },
+    { "userId": "U2004", "name": "Petter Johansen", "role": "user", "childId": "B202", "phone": "98123309", "address": "Bygdøy Allé 42, 0265 Oslo" },
+
+    { "userId": "U2005", "name": "Shazia Khan", "role": "user", "childId": "B203", "phone": "94011822", "address": "Sørkedalsveien 88, 0377 Oslo" },
+    { "userId": "U2006", "name": "Farid Khan", "role": "user", "childId": "B203", "phone": "95700264", "address": "Sørkedalsveien 88, 0377 Oslo" },
+
+    { "userId": "U2007", "name": "Hanne Vik", "role": "user", "childId": "B204", "phone": "97566110", "address": "Majorstuveien 33, 0367 Oslo" },
+    { "userId": "U2008", "name": "Per Vik", "role": "user", "childId": "B204", "phone": "98217863", "address": "Majorstuveien 33, 0367 Oslo" },
+
+    { "userId": "U2009", "name": "Kristine Lunde", "role": "user", "childId": "B205", "phone": "91300612", "address": "Tåsenveien 19, 0870 Oslo" },
+    { "userId": "U2010", "name": "Håkon Lunde", "role": "user", "childId": "B205", "phone": "95488122", "address": "Tåsenveien 19, 0870 Oslo" },
+
+    { "userId": "U2011", "name": "Marianne Stein", "role": "user", "childId": "B206", "phone": "94022981", "address": "Korsvollbakken 7, 0885 Oslo" },
+    { "userId": "U2012", "name": "Roger Stein", "role": "user", "childId": "B206", "phone": "93288410", "address": "Korsvollbakken 7, 0885 Oslo" },
+
+    { "userId": "U2013", "name": "Amina Farooq", "role": "user", "childId": "B207", "phone": "91576333", "address": "Bjerkealleen 28, 0584 Oslo" },
+    { "userId": "U2014", "name": "Imran Farooq", "role": "user", "childId": "B207", "phone": "93910228", "address": "Bjerkealleen 28, 0584 Oslo" },
+
+    { "userId": "U2015", "name": "Nina Krogh", "role": "user", "childId": "B208", "phone": "95320118", "address": "Refstadveien 5, 0589 Oslo" },
+    { "userId": "U2016", "name": "Arvid Krogh", "role": "user", "childId": "B208", "phone": "98433109", "address": "Refstadveien 5, 0589 Oslo" },
+
+    { "userId": "U2017", "name": "Maja Molvik", "role": "user", "childId": "B209", "phone": "91322988", "address": "Grefsenkollen 11, 0490 Oslo" },
+    { "userId": "U2018", "name": "Sindre Molvik", "role": "user", "childId": "B209", "phone": "97366477", "address": "Grefsenkollen 11, 0490 Oslo" },
+
+    { "userId": "U2019", "name": "Elvira Aas", "role": "user", "childId": "B210", "phone": "98012256", "address": "Sandakerveien 23, 0473 Oslo" },
+    { "userId": "U2020", "name": "Rune Aas", "role": "user", "childId": "B210", "phone": "92317844", "address": "Sandakerveien 23, 0473 Oslo" },
+
+    { "userId": "A4001", "name": "Lise Øverland", "role": "admin", "position": "Pedagogisk leder" },
+    { "userId": "A4002", "name": "Mari Fjeld", "role": "admin", "position": "Assistent" },
+    { "userId": "A4003", "name": "Tone Almlid", "role": "admin", "position": "Pedagogisk leder" },
+    { "userId": "A4004", "name": "Stian Hov", "role": "admin", "position": "Assistent" }
+  ]
+}
