@@ -1,16 +1,16 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
 // settings
-import SettingsLayout from "../pages/SettingsLayout";
-import SettingsMain from "../pages/SettingsMain";
+import SettingsLayout from "../pages/settings/SettingsLayout";
+import SettingsMain from "../pages/settings/SettingsMain";
 
 // subpages
-import Preferences from "../pages/subpages/Preferences";
-import Contact from "../pages/subpages/Contact";
-import Register from "../pages/subpages/Register";
-import ChangePassword from "../pages/subpages/ChangePassword";
-import DeleteAccount from "../pages/subpages/DeleteAccount";
-import Privacy from "../pages/subpages/Privacy";
+import Preferences from "../pages/settings/subpages/Preferences";
+import Contact from "../pages/settings/subpages/Contact";
+import Register from "../pages/settings/subpages/Register";
+import ChangePassword from "../pages/settings/subpages/ChangePassword";
+import DeleteAccount from "../pages/settings/subpages/DeleteAccount";
+import Privacy from "../pages/settings/subpages/Privacy";
 
 export default function AppRoutes() {
   return (
