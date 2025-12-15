@@ -19,12 +19,12 @@ export default function AppRoutes() {
 
       <Route path="/settings" element={<SettingsLayout />}>
         <Route index element={<SettingsMain />} />
-        <Route path="preferanser" element={<Preferences />} />
-        <Route path="kontakt-huskelista" element={<Contact />} />
-        <Route path="registrer-ny-tilgang" element={<Register />} />
-        <Route path="endre-passord" element={<ChangePassword />} />
-        <Route path="slett-konto" element={<DeleteAccount />} />
-        <Route path="personvern" element={<Privacy />} />
+        <Route path="preferences" element={<Preferences />} />
+        <Route path="contact" element={<Contact />} />
+        <Route path="register" element={<Register />} />
+        <Route path="password" element={<ChangePassword />} />
+        <Route path="account" element={<DeleteAccount />} />
+        <Route path="privacy" element={<Privacy />} />
       </Route>
 
       <Route path="*" element={<div>404 – Fant ikke siden</div>} />
