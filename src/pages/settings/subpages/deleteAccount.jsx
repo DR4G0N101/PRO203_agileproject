@@ -127,7 +127,7 @@ export default function DeleteAccount() {
             <button
               type="button"
               className="modal-btn"
-              onClick={() => navigate("/login")}
+              onClick={() => navigate("/admin-login")}
             >
               Logg inn
             </button>
