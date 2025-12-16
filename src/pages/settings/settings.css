@@ -1,0 +1,94 @@
+:root {
+  --navy: #0b1354;
+  --orange: #ff7a3d;
+  --bg: #efefef;
+  --card: #ffffff;
+  --shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+}
+
+.settings-screen {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--navy);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  padding: 22px 20px 40px;
+}
+
+.settings-kicker {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 18px;
+  margin-top: 18px;
+}
+
+.settings-user {
+  margin-top: 22px;
+}
+
+.settings-user__name {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.0;
+}
+
+.settings-user__role {
+  margin-top: 10px;
+  font-size: 22px;
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.s-section {
+  margin-top: 34px;
+}
+
+.s-title {
+  font-size: 50px;
+  font-weight: 500;
+  margin: 0 0 14px 0;
+}
+
+.s-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.s-row {
+  width: 100%;
+  border: none;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  padding: 18px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  color: var(--navy);
+}
+
+.s-row__label {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.s-row__chev {
+  font-size: 38px;
+  line-height: 1;
+  color: var(--orange);
+  margin-left: 12px;
+}
+
+.s-row:active {
+  transform: translateY(1px);
+}
+
+.s-row:focus-visible {
+  outline: 3px solid rgba(255, 122, 61, 0.45);
+  outline-offset: 3px;
+}
+
+.s-row.is-danger .s-row__label {
+  color: #b30000;
+}

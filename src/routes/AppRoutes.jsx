@@ -22,8 +22,8 @@ export default function AppRoutes() {
         <Route path="preferences" element={<Preferences />} />
         <Route path="contact" element={<Contact />} />
         <Route path="register" element={<Register />} />
-        <Route path="password" element={<ChangePassword />} />
-        <Route path="account" element={<DeleteAccount />} />
+        <Route path="change-password" element={<ChangePassword />} />
+        <Route path="delete-account" element={<DeleteAccount />} />
         <Route path="privacy" element={<Privacy />} />
       </Route>
 
