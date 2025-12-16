@@ -128,3 +128,7 @@
 .logout-confirm:active {
   transform: translateY(1px);
 }
+
+.settings-screen {
+  padding-bottom: 120px; /* plass til bottom nav */
+}
