@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+
 import "./login.css";
+
 import Logo from "../../assets/Logo.png";
 import data from "../../data/dummy.json";
 
@@ -81,7 +83,7 @@ export default function AdminLogin() {
         </div>
 
         {/* Logg inn */}
-        <Link to="/settings">
+        <Link to="/home">
           <button className="btn-primary">Logg inn</button>
         </Link>
         
