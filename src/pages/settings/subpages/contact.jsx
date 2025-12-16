@@ -8,16 +8,20 @@ export default function Contact() {
 
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
 
   const onSubmit = (e) => {
     e.preventDefault();
 
-    // TODO: her kan dere sende til backend senere
-    // For nå: enkel demo
+    // TODO: send til backend senere
     console.log({ email, message });
 
-    alert("Sendt inn! (demo)");
-    setMessage("");
+    setSent(true);     // vis popup
+    setMessage("");    // tøm beskjed (valgfritt)
+  };
+
+  const closeModal = () => {
+    setSent(false);
   };
 
   return (
@@ -80,6 +84,37 @@ export default function Contact() {
           Send inn
         </button>
       </form>
+
+      {/* POPUP */}
+      {sent && (
+        <div
+          className="modal-overlay"
+          role="dialog"
+          aria-modal="true"
+          onClick={closeModal}
+        >
+          <div
+            className="modal-card"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="modal-icon">
+              <div className="modal-badge">
+                ✓
+              </div>
+            </div>
+
+            <div className="modal-title">Beskjed sendt</div>
+
+            <button
+              type="button"
+              className="modal-btn"
+              onClick={closeModal}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
