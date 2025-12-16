@@ -4,6 +4,9 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import AdminLogin from "../pages/login/AdminLogin";
 import ForgotPassword from "../pages/login/ForgotPassword";
 
+// Home, overview, messages
+import Overview from "../pages/Overview";
+
 // settings
 import SettingsLayout from "../pages/settings/SettingsLayout";
 import SettingsMain from "../pages/settings/SettingsMain";
@@ -25,6 +28,9 @@ export default function AppRoutes() {
       {/* ENTRY / AUTH PAGES */}
       <Route path="/admin-login" element={<AdminLogin />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
+
+      {/* HOME / OVERVIEW / MESSAGES */}
+      <Route path="/overview" element={<Overview />} />
 
       {/* SETTINGS */}
       <Route path="/settings" element={<SettingsLayout />}>
