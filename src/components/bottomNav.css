@@ -1,0 +1,58 @@
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  height: 92px;
+  background: #ffffff;
+  border-top: 1px solid rgba(11, 19, 84, 0.10);
+  box-shadow: 0 -10px 24px rgba(0, 0, 0, 0.06);
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+
+  padding: 10px 14px;
+  z-index: 50;
+}
+
+.bn-tab {
+  display: grid;
+  place-items: center;
+  text-decoration: none;
+  color: rgba(11, 19, 84, 0.9);
+  gap: 6px;
+}
+
+.bn-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  font-size: 28px;
+  line-height: 1;
+
+  background: transparent;
+}
+
+.bn-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  opacity: 0; /* skjul tekst for å matche bildet */
+  height: 0;
+}
+
+/* Active (highlight) */
+.bn-tab.is-active .bn-icon {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+/* Optional: slight active press */
+.bn-tab:active .bn-icon {
+  transform: translateY(1px);
+}

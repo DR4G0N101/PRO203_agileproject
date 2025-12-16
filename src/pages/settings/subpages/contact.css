@@ -1,0 +1,237 @@
+/* Contact-only styles */
+
+.contact-input,
+.contact-textarea {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.contact-back-btn {
+  border: none;
+  background: transparent;
+  color: var(--navy);
+  font-size: 28px;
+  cursor: pointer;
+  padding: 6px;
+  line-height: 1;
+}
+
+.contact-back-btn:active {
+  transform: translateY(1px);
+}
+
+.contact-back-title {
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-size: 18px;
+}
+
+.contact-title {
+  margin-top: 22px;
+  font-size: 46px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.contact-text {
+  margin-top: 12px;
+  font-size: 22px;
+  line-height: 1.4;
+  color: var(--navy);
+  max-width: 42ch;
+  opacity: 0.95;
+}
+
+.contact-divider {
+  margin: 22px 0 24px;
+  border: none;
+  border-top: 1px solid rgba(11, 19, 84, 0.22);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 520px;
+}
+
+.contact-label {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-top: 6px;
+}
+
+/* Input wrapper / icon */
+.contact-input-wrap {
+  position: relative;
+}
+
+.contact-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.55;
+  font-size: 18px;
+  pointer-events: none;
+}
+
+/* Inputs */
+.contact-input,
+.contact-textarea {
+  width: 100%;
+  border: 1px solid rgba(11, 19, 84, 0.06);
+  background: #ffffff;
+  box-shadow: var(--shadow);
+  outline: none;
+  transition: border-color 0.18s ease, box-shadow 0.18s ease, transform 0.05s ease;
+  color: var(--navy);
+}
+
+.contact-input {
+  border-radius: 999px;
+  padding: 16px 18px 16px 48px;
+  font-size: 18px;
+}
+
+.contact-textarea {
+  border-radius: 18px;
+  padding: 16px 18px;
+  font-size: 18px;
+  resize: none;
+  min-height: 220px; /* mer proff “kort” følelse */
+  line-height: 1.4;
+}
+
+/* Placeholder (grå, proff) */
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+  color: rgba(11, 19, 84, 0.42);
+}
+
+/* Focus state (pen, ikke “brutal”) */
+.contact-input:focus,
+.contact-textarea:focus {
+  border-color: rgba(255, 122, 61, 0.55);
+  box-shadow: 0 0 0 4px rgba(255, 122, 61, 0.16), var(--shadow);
+}
+
+/* Desktop hover */
+@media (hover: hover) {
+  .contact-input:hover,
+  .contact-textarea:hover {
+    border-color: rgba(11, 19, 84, 0.14);
+  }
+}
+
+/* Submit button */
+.contact-submit {
+  margin-top: 18px;
+  align-self: center;
+  border: none;
+  border-radius: 999px;
+  background: var(--orange);
+  color: #fff;
+  font-size: 18px;
+  padding: 14px 30px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 0.08s ease, filter 0.18s ease, opacity 0.18s ease;
+}
+
+.contact-submit:active {
+  transform: translateY(1px);
+}
+
+/* Optional: hover polish */
+@media (hover: hover) {
+  .contact-submit:hover {
+    filter: brightness(0.98);
+  }
+}
+
+/* Optional: disabled state (hvis du bruker disabled senere) */
+.contact-submit:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Modal / popup
+   ========================= */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  z-index: 999;
+}
+
+.modal-card {
+  width: min(420px, 92vw);
+  background: #ffffff;
+  border-radius: 26px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  padding: 34px 32px 28px;
+  text-align: center;
+}
+
+.modal-icon {
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+}
+
+.modal-badge {
+  width: 86px;
+  height: 86px;
+  border-radius: 24px;
+  background: radial-gradient(circle at 30% 30%, #3a4cc8, #0b1354);
+  display: grid;
+  place-items: center;
+}
+
+.modal-badge {
+  color: #fff;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.modal-title {
+  font-size: 44px;
+  font-weight: 500;
+  color: var(--navy);
+  margin: 10px 0 22px;
+}
+
+.modal-btn {
+  border: none;
+  border-radius: 999px;
+  background: var(--navy);
+  color: #ffffff;
+  font-size: 18px;
+  padding: 14px 40px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+}
+
+.modal-btn:active {
+  transform: translateY(1px);
+}
+
+.modal-btn {
+  box-sizing: border-box;
+  max-width: 100%;
+}
