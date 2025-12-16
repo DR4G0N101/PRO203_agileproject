@@ -61,30 +61,43 @@ export default function ChangePassword() {
     closeModal();
   };
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+ const onSubmit = (e) => {
+  e.preventDefault();
 
-    const p1 = newPw.trim();
-    const p2 = repeatPw.trim();
+  const current = currentPw.trim();
+  const p1 = newPw.trim();
+  const p2 = repeatPw.trim();
 
-    if (p1 !== p2) {
-      openModal({
-        title: "Passordene matcher ikke",
-        variant: "error",
-        action: "ok",
-      });
-      return;
-    }
-
-    // TODO: send til backend senere
-    console.log({ email, currentPw, newPw: p1 });
-
+  // 1) Nye passord må matche
+  if (p1 !== p2) {
     openModal({
-      title: "Passordet ble endret",
-      variant: "success",
-      action: "login",
+      title: "Passordene matcher ikke",
+      variant: "error",
+      action: "ok",
     });
-  };
+    return;
+  }
+
+  // 2) Nytt passord kan ikke være samme som nåværende
+  if (p1 === current) {
+    openModal({
+      title: "Du kan ikke bruke gammelt passord",
+      variant: "error",
+      action: "ok",
+    });
+    return;
+  }
+
+  // TODO: send til backend senere
+  console.log({ email, currentPw, newPw: p1 });
+
+  openModal({
+    title: "Passordet ble endret",
+    variant: "success",
+    action: "login",
+  });
+};
+
 
   return (
     <div className="settings-screen">
