@@ -6,6 +6,8 @@ import ForgotPassword from "../pages/login/ForgotPassword";
 
 // Home, overview, messages
 import Overview from "../pages/Overview";
+import Messages from "../pages/Messages";
+import MessagesParents from "../pages/MessagesParents";
 
 // settings
 import SettingsLayout from "../pages/settings/SettingsLayout";
@@ -31,6 +33,8 @@ export default function AppRoutes() {
 
       {/* HOME / OVERVIEW / MESSAGES */}
       <Route path="/overview" element={<Overview />} />
+      <Route path="/messages" element={<Messages/>} />
+      <Route path="/messages-parents" element={<MessagesParents/>} />
 
       {/* SETTINGS */}
       <Route path="/settings" element={<SettingsLayout />}>
@@ -44,7 +48,7 @@ export default function AppRoutes() {
       </Route>
 
       {/* 404 */}
-      <Route path="*" element={<div>404 – Fant ikke siden</div>} />
+      <Route path="*" element={<div>404 - Fant ikke siden</div>} />
     </Routes>
   );
 }
