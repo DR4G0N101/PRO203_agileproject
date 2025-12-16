@@ -19,10 +19,11 @@ function Tab({ to, label, icon }) {
 export default function BottomNav() {
   return (
     <nav className="bottom-nav" aria-label="Hovedmeny">
-      <Tab to="/children" label="Barn" icon="👥" />
-      <Tab to="/messages" label="Meldinger" icon="💬" />
-      <Tab to="/overview" label="Oversikt" icon="📋" />
-      <Tab to="/settings" label="Innstillinger" icon="⚙️" />
+      <Tab to="/home" label="home" icon="👥" />
+      <Tab to="/messages" label="messages" icon="💬" />
+      {/* <Tab to="/messages-parents" label="Meldinger" icon="💬" /> */}
+      <Tab to="/overview" label="overview" icon="📋" />
+      <Tab to="/settings" label="settings" icon="⚙️" />
     </nav>
   );
 }

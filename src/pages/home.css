@@ -1,0 +1,134 @@
+* { box-sizing: border-box; }
+
+.ch-container {
+  min-height: 100vh;
+  width: 100%;
+  background: var(--bg, #efefef);
+  color: var(--navy, #0b1354);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+
+  padding-top: 22px;
+  padding-bottom: calc(120px + env(safe-area-inset-bottom));
+}
+
+/* Header */
+.ch-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 20px;
+}
+
+.ch-menu-btn {
+  font-size: 28px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 6px 8px;
+  color: var(--navy, #0b1354);
+}
+
+.ch-title {
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0;
+  letter-spacing: 0.06em;
+  color: var(--navy, #0b1354);
+}
+
+.ch-subtitle {
+  margin: 10px 0 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--orange, #ff7a3d);
+  padding: 0 20px;
+}
+
+/* Parent link button */
+.ch-parent-link {
+  margin: 0 20px 16px;
+  padding: 0;
+  border: none;
+  background: transparent;
+
+  color: var(--navy, #0b1354);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* List */
+.ch-list {
+  margin-top: 6px;
+  padding: 0;
+}
+
+/* Cards (floating like settings rows) */
+.ch-card {
+  width: calc(100% - 32px);
+  margin: 0 16px 16px;
+
+  border: none;
+  border-radius: 10px;
+  background: var(--card, #ffffff);
+  box-shadow: var(--shadow, 0 10px 24px rgba(0,0,0,0.06));
+  padding: 0;
+
+  display: flex;
+  align-items: stretch;
+  cursor: pointer;
+  color: var(--navy, #0b1354);
+  text-align: left;
+  overflow: hidden;
+}
+
+.ch-card:active {
+  transform: translateY(1px);
+}
+
+.ch-colorbar {
+  width: 18px;
+  flex-shrink: 0;
+}
+
+.ch-card-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px;
+  gap: 12px;
+}
+
+.ch-card-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.ch-card-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.ch-card-count {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--navy, #0b1354);
+}
+
+.ch-chevron {
+  font-size: 34px;
+  line-height: 1;
+  color: var(--orange, #ff7a3d);
+}
+
+/* Focus */
+.ch-menu-btn:focus-visible,
+.ch-parent-link:focus-visible,
+.ch-card:focus-visible {
+  outline: 3px solid rgba(255, 122, 61, 0.45);
+  outline-offset: 3px;
+}

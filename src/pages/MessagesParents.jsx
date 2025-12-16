@@ -1,311 +1,168 @@
-import React, { useState } from "react";
+import { useMemo, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-export default function MessagesForesatte({ activePage, setActivePage }) {
-    const [showNewMessage, setShowNewMessage] = useState(false);
+import BurgerMenu from "../components/BurgerMenu";
+import BottomNav from "../components/BottomNav";
 
-    const messages = [
-        {
-            name: "Merete",
-            group: "Avd. Rompetroll",
-            text: "Helt i orden",
-            status: "new",
-        },
-        {
-            name: "Jane Doe",
-            group: "Avd. Askeladden",
-            text: "Takk for beskjed",
-            status: "new",
-        },
-        {
-            name: "Hans Hansen",
-            group: "Avd. Rompetroll",
-            text: "Godt å vite.",
-            status: "read",
-        },
-        {
-            name: "John Doe",
-            group: "Avd. Rompetroll",
-            text: "Ok.",
-            status: "read",
-        },
-        {
-            name: "Kari Normann",
-            group: "Avd. Askeladden",
-            text: "Supert det",
-            status: "read",
-        },
-    ];
+import "./settings/settings.css";
+import "./messages.css";
 
-    return (
-        <div style={styles.container}>
-            {/* Header */}
-            <div style={styles.header}>
-                {showNewMessage ? (
-                    <span
-                        style={styles.backButton}
-                        onClick={() => setShowNewMessage(false)}
-                    >
-                        ←
-                    </span>
-                ) : (
-                    <span style={styles.menuIcon}>☰</span>
-                )}
+export default function MessagesParents() {
+  const navigate = useNavigate();
 
-                <h2 style={styles.title}>MELDINGER</h2>
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [search, setSearch] = useState("");
 
-                {!showNewMessage && (
-                    <span
-                        style={styles.plus}
-                        onClick={() => setShowNewMessage(true)}
-                    >
-                        ＋
-                    </span>
-                )}
-            </div>
+  const [showNew, setShowNew] = useState(false);
+  const [contact, setContact] = useState("");
+  const [text, setText] = useState("");
 
-            {!showNewMessage ? (
-                <>
-                    {/* Search */}
-                    <div style={styles.searchBox}>
-                        <span>🔍</span>
-                        <input placeholder="Søk ..." style={styles.searchInput} />
-                    </div>
+  // Foreldre/foresatte (samme struktur som Messages)
+  const messages = useMemo(
+    () => [
+      { id: 1, name: "Kari (mor)", text: "Kan du bekrefte hentetid i dag?", time: "09:12" },
+      { id: 2, name: "Ola (far)", text: "Vi kommer litt senere i dag.", time: "08:44" },
+      { id: 3, name: "Lea (foresatt)", text: "Har dere fått med regntøy?", time: "I går" },
+    ],
+    []
+  );
 
-                    {/* Message list */}
-                    <div style={styles.list}>
-                        {messages.map((m, index) => (
-                            <div key={index} style={styles.messageCard}>
-                                <div style={styles.nameRow}>
-                                    <span style={styles.name}>{m.name}</span>
-                                    {m.status === "new" ? (
-                                        <span style={styles.new}>new</span>
-                                    ) : (
-                                        <span style={styles.sent}>✓✓</span>
-                                    )}
-                                </div>
-                                <div style={styles.group}>{m.group}</div>
-                                <div
-                                    style={
-                                        m.status === "new"
-                                            ? styles.textNew
-                                            : styles.text
-                                    }
-                                >
-                                    {m.text}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </>
-            ) : (
-                <>
-                    {/* New message */}
-                    <h3 style={styles.newTitle}>Ny beskjed</h3>
-                    <p style={styles.newDescription}>
-                        Send en ny melding til en avdeling.
-                    </p>
-
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Velg avdeling</label>
-                        <input value="Rompetroll" disabled style={styles.input} />
-                    </div>
-
-                    <div style={styles.formGroup}>
-                        <label style={styles.label}>Beskjed</label>
-                        <textarea
-                            placeholder="Hva har du på hjertet?"
-                            style={styles.textArea}
-                        />
-                    </div>
-
-                    <button style={styles.sendButton}>Send inn</button>
-                </>
-            )}
-
-            {/* Bottom nav */}
-            <div style={styles.bottomNav}>
-                <span onClick={() => setActivePage("home")}>👥</span>
-                <span onClick={() => setActivePage("messages")}>💬</span>
-                <span onClick={() => setActivePage("overview")}>📋</span>
-                <span style={{ color: "#002B7F" }}>⚙️</span>
-            </div>
-        </div>
+  const filteredMessages = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return messages;
+    return messages.filter(
+      (m) =>
+        m.name.toLowerCase().includes(q) ||
+        m.text.toLowerCase().includes(q)
     );
+  }, [messages, search]);
+
+  // BurgerMenu: samme stil, men "Foreldre" aktiv (valgfritt)
+  const sections = useMemo(
+    () => [
+      {
+        heading: "Navigasjon",
+        items: [
+          { label: "Meldinger", value: "messages", onSelect: () => navigate("/messages") },
+          { label: "Foreldre", value: "messages-parents", onSelect: () => navigate("/messages-parents"), active: true },
+          { label: "Oversikt", value: "overview", onSelect: () => navigate("/overview") },
+          { label: "Innstillinger", value: "settings", onSelect: () => navigate("/settings") },
+        ],
+      },
+    ],
+    [navigate]
+  );
+
+  return (
+    <div className="msg-container">
+      <BurgerMenu
+        open={menuOpen}
+        onClose={() => setMenuOpen(false)}
+        title="MENY"
+        sections={sections}
+      />
+
+      {/* Header */}
+      <div className="msg-header">
+        <button
+          type="button"
+          className="msg-menu-btn"
+          onClick={() => setMenuOpen(true)}
+          aria-label="Åpne meny"
+        >
+          ☰
+        </button>
+        <h2 className="msg-title">MELDINGER</h2>
+      </div>
+
+      <p className="msg-subtitle">Foreldre</p>
+
+      {/* Search */}
+      <div className="msg-search">
+        <span className="msg-search-icon" aria-hidden="true">🔍</span>
+        <input
+          className="msg-search-input"
+          placeholder="Søk i meldinger ..."
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+        />
+      </div>
+
+      {/* Meldingsliste */}
+      <div className="msg-list">
+        {filteredMessages.map((m) => (
+          <div key={m.id} className="msg-card">
+            <div>
+              <div className="msg-name">{m.name}</div>
+              <div className="msg-preview">{m.text}</div>
+            </div>
+            <div className="msg-time">{m.time}</div>
+          </div>
+        ))}
+      </div>
+
+      {/* ➕ New message button */}
+      <button
+        className="msg-fab"
+        aria-label="Ny beskjed"
+        onClick={() => setShowNew(true)}
+      >
+        +
+      </button>
+
+      {/* Popup */}
+      {showNew && (
+        <div className="msg-modal-overlay" onClick={() => setShowNew(false)}>
+          <div className="msg-modal" onClick={(e) => e.stopPropagation()}>
+            <h3 className="msg-modal-title">Ny beskjed</h3>
+
+            <label className="msg-label">Velg forelder/foresatt</label>
+            <select
+              className="msg-select"
+              value={contact}
+              onChange={(e) => setContact(e.target.value)}
+            >
+              <option value="">Velg…</option>
+              <option value="Kari (mor)">Kari (mor)</option>
+              <option value="Ola (far)">Ola (far)</option>
+              <option value="Lea (foresatt)">Lea (foresatt)</option>
+            </select>
+
+            <label className="msg-label">Beskjed</label>
+            <textarea
+              className="msg-textarea"
+              placeholder="Hva har du på hjertet?"
+              value={text}
+              onChange={(e) => setText(e.target.value)}
+            />
+
+            <div className="msg-actions">
+              <button
+                type="button"
+                className="msg-cancel"
+                onClick={() => setShowNew(false)}
+              >
+                Avbryt
+              </button>
+
+              <button
+                type="button"
+                className="msg-send"
+                onClick={() => {
+                  alert("Beskjed sendt (demo)");
+                  setShowNew(false);
+                  setContact("");
+                  setText("");
+                }}
+              >
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <BottomNav />
+    </div>
+  );
 }
-
-/* ================= STYLES ================= */
-
-const styles = {
-    container: {
-        padding: "16px",
-        backgroundColor: "#F5F5F5",
-        height: "100vh",
-        paddingBottom: "60px",
-        boxSizing: "border-box",
-        overflow: "hidden",
-    },
-
-    header: {
-        display: "flex",
-        alignItems: "center",
-        gap: "10px",
-    },
-
-    backButton: {
-        fontSize: "24px",
-        cursor: "pointer",
-        color: "#000",
-    },
-
-    menuIcon: {
-        fontSize: "24px",
-        color: "#000",
-    },
-
-    title: {
-        fontSize: "20px",
-        fontWeight: "700",
-        flex: 1,
-        color: "#000",
-    },
-
-    plus: {
-        fontSize: "24px",
-        cursor: "pointer",
-        color: "#000",
-    },
-
-    searchBox: {
-        display: "flex",
-        alignItems: "center",
-        backgroundColor: "white",
-        padding: "8px",
-        borderRadius: "10px",
-        marginTop: "10px",
-    },
-
-    searchInput: {
-        marginLeft: "8px",
-        border: "none",
-        outline: "none",
-        width: "100%",
-        background: "transparent",
-        color: "#000",
-    },
-
-    list: {
-        marginTop: "14px",
-    },
-
-    messageCard: {
-        backgroundColor: "white",
-        borderRadius: "10px",
-        padding: "10px",
-        marginBottom: "8px",
-    },
-
-    nameRow: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-    },
-
-    name: {
-        fontWeight: "600",
-        color: "#000",
-    },
-
-    group: {
-        fontSize: "13px",
-        color: "#000",
-    },
-
-    text: {
-        fontSize: "13px",
-        color: "#000",
-    },
-
-    textNew: {
-        fontSize: "15px",
-        fontWeight: "600",
-        color: "#000",
-    },
-
-    new: {
-        color: "#FF6F4A",
-        fontSize: "12px",
-    },
-
-    sent: {
-        color: "#FF6F4A",
-    },
-
-    newTitle: {
-        fontSize: "18px",
-        fontWeight: "700",
-        marginTop: "10px",
-        color: "#000",
-    },
-
-    newDescription: {
-        fontSize: "14px",
-        marginBottom: "14px",
-        color: "#000",
-    },
-
-    formGroup: {
-        marginBottom: "14px",
-    },
-
-    label: {
-        fontSize: "13px",
-        marginBottom: "4px",
-        display: "block",
-        color: "#000",
-    },
-
-    input: {
-        width: "100%",
-        padding: "10px",
-        borderRadius: "10px",
-        border: "none",
-        backgroundColor: "white",
-        color: "#000",
-    },
-
-    textArea: {
-        width: "100%",
-        height: "110px",
-        padding: "10px",
-        borderRadius: "10px",
-        border: "none",
-        resize: "none",
-        backgroundColor: "white",
-        color: "#000",
-    },
-
-    sendButton: {
-        marginTop: "10px",
-        padding: "10px 24px",
-        borderRadius: "20px",
-        border: "none",
-        backgroundColor: "#FF6F4A",
-        color: "white",
-        fontWeight: "600",
-        cursor: "pointer",
-    },
-
-    bottomNav: {
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        width: "100%",
-        height: "60px",
-        backgroundColor: "white",
-        borderTop: "1px solid #ddd",
-        display: "flex",
-        justifyContent: "space-around",
-        alignItems: "center",
-        fontSize: "24px",
-    },
-};

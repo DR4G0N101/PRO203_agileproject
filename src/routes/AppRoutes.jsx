@@ -5,6 +5,7 @@ import AdminLogin from "../pages/login/AdminLogin";
 import ForgotPassword from "../pages/login/ForgotPassword";
 
 // Home, overview, messages
+import Home from "../pages/Home";
 import Overview from "../pages/Overview";
 import Messages from "../pages/Messages";
 import MessagesParents from "../pages/MessagesParents";
@@ -32,6 +33,7 @@ export default function AppRoutes() {
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
       {/* HOME / OVERVIEW / MESSAGES */}
+      <Route path="/home" element={<Home />} />
       <Route path="/overview" element={<Overview />} />
       <Route path="/messages" element={<Messages/>} />
       <Route path="/messages-parents" element={<MessagesParents/>} />
