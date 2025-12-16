@@ -12,11 +12,18 @@ import ChangePassword from "../pages/settings/subpages/ChangePassword";
 import DeleteAccount from "../pages/settings/subpages/DeleteAccount";
 import Privacy from "../pages/settings/subpages/Privacy";
 
+// overview (ligger direkte i pages/)
+import Overview from "../pages/Overview";
+
 export default function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<Navigate to="/settings" replace />} />
 
+      {/* OVERVIEW */}
+      <Route path="/overview" element={<Overview />} />
+
+      {/* SETTINGS */}
       <Route path="/settings" element={<SettingsLayout />}>
         <Route index element={<SettingsMain />} />
         <Route path="preferences" element={<Preferences />} />
