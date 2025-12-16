@@ -1,106 +1,183 @@
-import { useState } from "react";
-import BurgerMenu from "../components/BurgerMenu";
-import "../pages/settings/settings.css"; // bruker samme app-stil/padding (valgfritt)
+import React from "react";
 
-export default function Overview() {
-  const [menuOpen, setMenuOpen] = useState(false);
-  const [department, setDepartment] = useState("alle");
+export default function Overview({ activePage, setActivePage }) {
+    const children = [
+        { name: "Lea", img: "https://i.pravatar.cc/80?img=1" },
+        { name: "Kari", img: "https://i.pravatar.cc/80?img=2" },
+        { name: "Hans", img: "https://i.pravatar.cc/80?img=3" },
+        { name: "Ola", img: "https://i.pravatar.cc/80?img=4" },
+        { name: "Muhammed", img: "https://i.pravatar.cc/80?img=5" },
+    ];
 
-  const departmentLabel = {
-    alle: "Alle",
-    rompetroll: "Rompetroll",
-    askeladden: "Askeladden",
-    firklover: "Firkløver",
-  }[department];
+    return (
+        <div style={styles.container}>
+            {/* Header */}
+            <div style={styles.header}>
+                <div style={styles.menuIcon}>☰</div>
+                <h2 style={styles.title}>OVERSIKT</h2>
+            </div>
 
-  return (
-    <div className="settings-screen">
-      {/* toppområde */}
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-        <button
-          type="button"
-          onClick={() => setMenuOpen(true)}
-          style={{
-            border: "none",
-            background: "transparent",
-            fontSize: 28,
-            cursor: "pointer",
-            color: "var(--navy)",
-            padding: 6,
-          }}
-          aria-label="Åpne meny"
-        >
-          ☰
-        </button>
+            <p style={styles.subTitle}>Rompetroll</p>
 
-        <div style={{ fontWeight: 800, letterSpacing: "0.06em" }}>OVERSIKT</div>
-      </div>
+            {/* Search */}
+            <div style={styles.searchBox}>
+                <span>🔍</span>
+                <input
+                    placeholder="Søk ..."
+                    style={styles.searchInput}
+                />
+            </div>
 
-      <h1 style={{ marginTop: 24, fontSize: 46, fontWeight: 500, color: "var(--navy)" }}>
-        Oversikt
-      </h1>
+            {/* Children list */}
+            <div style={{ marginTop: "20px" }}>
+                {children.map((child, index) => (
+                    <div key={index} style={styles.childCard}>
+                        <img src={child.img} style={styles.childImg} />
+                        <span style={styles.childName}>{child.name}</span>
+                        <span style={styles.childMenu}>⋮</span>
+                    </div>
+                ))}
+            </div>
 
-      <p style={{ marginTop: 10, fontSize: 22, color: "var(--navy)", opacity: 0.95 }}>
-        Valgt avdeling: <strong>{departmentLabel}</strong>
-      </p>
+            {/* Bottom nav */}
+            <div style={styles.bottomNav}>
+                <span
+                    style={{
+                        ...styles.navItem,
+                        color: activePage === "home" ? "#002B7F" : "#000",
+                    }}
+                    onClick={() => setActivePage("home")}
+                >
+                    👥
+                </span>
 
-      <div
-        style={{
-          marginTop: 18,
-          background: "#fff",
-          borderRadius: 18,
-          boxShadow: "var(--shadow)",
-          padding: 18,
-          maxWidth: 520,
-        }}
-      >
-        <div style={{ fontSize: 18, opacity: 0.8 }}>
-          (Demo) Her kan du senere vise barneliste/tilstede osv. filtrert på avdeling.
+                <span
+                    style={{
+                        ...styles.navItem,
+                        color: activePage === "messages" ? "#002B7F" : "#000",
+                    }}
+                    onClick={() => setActivePage("messages")}
+                >
+                    💬
+                </span>
+
+                <span
+                    style={{
+                        ...styles.navItem,
+                        color: activePage === "overview" ? "#002B7F" : "#000",
+                    }}
+                    onClick={() => setActivePage("overview")}
+                >
+                    📋
+                </span>
+
+                <span style={styles.navItem}>⚙️</span>
+            </div>
         </div>
-      </div>
-
-      {/* Burger menu */}
-      <BurgerMenu
-        open={menuOpen}
-        onClose={() => setMenuOpen(false)}
-        title="VELG"
-        sections={[
-          {
-            heading: "Alle",
-            items: [
-              {
-                label: "Alle",
-                value: "alle",
-                active: department === "alle",
-                onSelect: setDepartment,
-              },
-            ],
-          },
-          {
-            heading: "Avdelinger",
-            items: [
-              {
-                label: "Rompetroll",
-                value: "rompetroll",
-                active: department === "rompetroll",
-                onSelect: setDepartment,
-              },
-              {
-                label: "Askeladden",
-                value: "askeladden",
-                active: department === "askeladden",
-                onSelect: setDepartment,
-              },
-              {
-                label: "Firkløver",
-                value: "firklover",
-                active: department === "firklover",
-                onSelect: setDepartment,
-              },
-            ],
-          },
-        ]}
-      />
-    </div>
-  );
+    );
 }
+
+const styles = {
+    container: {
+        padding: "20px",
+        backgroundColor: "#F5F5F5",
+        height: "100vh",
+        paddingBottom: "60px",
+        boxSizing: "border-box",
+        overflow: "hidden",
+    },
+
+    header: {
+        display: "flex",
+        alignItems: "center",
+        gap: "10px",
+    },
+
+    menuIcon: {
+        fontSize: "26px",
+        cursor: "pointer",
+        color: "#000",
+    },
+
+    title: {
+        fontSize: "24px",
+        fontWeight: "700",
+        margin: 0,
+        color: "#000", // ✅ FIX
+    },
+
+    subTitle: {
+        marginTop: "-4px",
+        fontWeight: 500,
+        color: "#000", // ✅ FIX
+    },
+
+    searchBox: {
+        background: "white",
+        borderRadius: "10px",
+        display: "flex",
+        alignItems: "center",
+        padding: "10px",
+        marginTop: "10px",
+        boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+    },
+
+    searchInput: {
+        border: "none",
+        outline: "none",
+        fontSize: "16px",
+        width: "100%",
+        marginLeft: "10px",
+        backgroundColor: "transparent", // ✅ FIX
+        color: "#000",
+    },
+
+    childCard: {
+        background: "white",
+        borderRadius: "12px",
+        display: "flex",
+        alignItems: "center",
+        padding: "10px",
+        marginBottom: "15px",
+        boxShadow: "0 3px 8px rgba(0,0,0,0.1)",
+    },
+
+    childImg: {
+        width: "50px",
+        height: "50px",
+        borderRadius: "10px",
+        objectFit: "cover",
+        marginRight: "15px",
+    },
+
+    childName: {
+        fontSize: "18px",
+        fontWeight: "600",
+        flex: 1,
+        color: "#000", // ✅ FIX – DETTE VAR HOVEDPROBLEMET
+    },
+
+    childMenu: {
+        fontSize: "22px",
+        cursor: "pointer",
+        color: "#FF6F4A",
+    },
+
+    bottomNav: {
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        width: "100%",
+        height: "60px",
+        backgroundColor: "white",
+        borderTop: "1px solid #ddd",
+        display: "flex",
+        justifyContent: "space-around",
+        alignItems: "center",
+        fontSize: "26px",
+    },
+
+    navItem: {
+        cursor: "pointer",
+    },
+};

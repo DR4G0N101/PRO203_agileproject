@@ -79,7 +79,7 @@ export default function SettingsMain() {
 
               <button
                 className="logout-confirm"
-                onClick={() => navigate("/login")}
+                onClick={() => navigate("/admin-login")}
               >
                 Logg ut
               </button>

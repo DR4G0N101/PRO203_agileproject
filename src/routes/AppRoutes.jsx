@@ -1,10 +1,14 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
+// entry / auth pages (first screens)
+import AdminLogin from "../pages/login/AdminLogin";
+import ForgotPassword from "../pages/login/ForgotPassword";
+
 // settings
 import SettingsLayout from "../pages/settings/SettingsLayout";
 import SettingsMain from "../pages/settings/SettingsMain";
 
-// subpages
+// settings-subpages
 import Preferences from "../pages/settings/subpages/Preferences";
 import Contact from "../pages/settings/subpages/Contact";
 import Register from "../pages/settings/subpages/Register";
@@ -12,16 +16,15 @@ import ChangePassword from "../pages/settings/subpages/ChangePassword";
 import DeleteAccount from "../pages/settings/subpages/DeleteAccount";
 import Privacy from "../pages/settings/subpages/Privacy";
 
-// overview (ligger direkte i pages/)
-import Overview from "../pages/Overview";
-
 export default function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/settings" replace />} />
+      {/* DEFAULT → LOGIN */}
+      <Route path="/" element={<Navigate to="/admin-login" replace />} />
 
-      {/* OVERVIEW */}
-      <Route path="/overview" element={<Overview />} />
+      {/* ENTRY / AUTH PAGES */}
+      <Route path="/admin-login" element={<AdminLogin />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
 
       {/* SETTINGS */}
       <Route path="/settings" element={<SettingsLayout />}>
@@ -34,6 +37,7 @@ export default function AppRoutes() {
         <Route path="privacy" element={<Privacy />} />
       </Route>
 
+      {/* 404 */}
       <Route path="*" element={<div>404 – Fant ikke siden</div>} />
     </Routes>
   );
