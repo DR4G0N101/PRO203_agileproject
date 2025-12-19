@@ -36,7 +36,6 @@ export default function DeleteAccount() {
   const [pw, setPw] = useState("");
   const [agree, setAgree] = useState(false);
 
-  // modal
   const [modalOpen, setModalOpen] = useState(false);
 
   const closeModal = () => setModalOpen(false);
@@ -54,7 +53,6 @@ export default function DeleteAccount() {
 
   return (
     <div className="settings-screen">
-      {/* Header */}
       <div className="da-header">
         <button
           type="button"
@@ -114,7 +112,6 @@ export default function DeleteAccount() {
         </button>
       </form>
 
-      {/* Modal */}
       {modalOpen && (
         <div className="modal-overlay" role="dialog" aria-modal="true" onClick={closeModal}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>

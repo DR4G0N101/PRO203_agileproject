@@ -1,16 +1,60 @@
-# React + Vite
+# PRO203 – Smidig prosjekt
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dette repositoriet inneholder kildekode og tilhørende artefakter for prosjektet i **PRO203 – Smidig prosjekt** ved Høyskolen Kristiania.
 
-Currently, two official plugins are available:
+Prosjektet er gjennomført som et gruppeprosjekt med fokus på smidig utvikling, Scrum og brukersentrert design, og resulterte i en fungerende prototype.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Innhold
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Kildekode for løsningen  
+- Dokumentasjon av utviklingsprosessen  
+- Artefakter fra Google Design Sprint  
+- Sprint-relaterte leveranser (backlogs, brukerhistorier, tester)  
+- Leveransetest  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Prosjektbeskrivelse
+
+Målet med prosjektet var å:
+
+- Utvikle en prototype basert på et definert sprintmål  
+- Benytte Scrum som metodikk gjennom hele prosjektperioden  
+- Gjennomføre en Google Design Sprint i tidlig fase  
+- Dokumentere både produktresultat og prosess  
+
+Prosjektet er utviklet iterativt med fokus på brukerbehov, tverrfaglig samarbeid og kontinuerlig forbedring.
+
+---
+
+## Teknologi og verktøy
+
+Avhengig av løsning benytter prosjektet følgende teknologier og verktøy:
+
+- Frontend: React  
+- Backend: Node.js / Express (der aktuelt)  
+- Versjonskontroll: Git og GitHub  
+- Design og prototyping: Figma  
+- Prosessmetodikk: Scrum  
+- Designmetodikk: Google Design Sprint  
+
+Se kildekode og rapport for detaljer.
+
+---
+
+## Kom i gang
+
+### Forutsetninger
+
+- Node.js  
+- Git  
+
+### Installering (eksempel)
+
+```bash
+git clone https://github.com/DR4G0N101/PRO203_agileproject.git
+cd PRO203_agileproject
+npm install
+npm run dev

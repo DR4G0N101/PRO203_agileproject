@@ -53,7 +53,6 @@ export default function SettingsMain() {
         </div>
       </section>
 
-      {/* LOGG UT POPUP */}
       {showLogoutModal && (
         <div
           className="modal-overlay"

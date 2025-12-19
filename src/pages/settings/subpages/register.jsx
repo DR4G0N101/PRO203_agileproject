@@ -37,10 +37,9 @@ export default function Register() {
   const [email, setEmail] = useState("");
   const [email2, setEmail2] = useState("");
 
-  // modal state
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState("Bruker opprettet");
-  const [modalVariant, setModalVariant] = useState("success"); // "success" | "error"
+  const [modalVariant, setModalVariant] = useState("success");
 
   const openModal = (title, variant = "success") => {
     setModalTitle(title);
@@ -69,7 +68,6 @@ export default function Register() {
 
   return (
     <div className="settings-screen">
-      {/* Header */}
       <div className="reg-header">
         <button
           type="button"
@@ -135,7 +133,6 @@ export default function Register() {
         </button>
       </form>
 
-      {/* Modal / popup */}
       {modalOpen && (
         <div className="modal-overlay" role="dialog" aria-modal="true" onClick={closeModal}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>

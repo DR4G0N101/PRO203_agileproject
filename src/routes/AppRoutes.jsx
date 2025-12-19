@@ -25,20 +25,16 @@ import Privacy from "../pages/settings/subpages/Privacy";
 export default function AppRoutes() {
   return (
     <Routes>
-      {/* DEFAULT → LOGIN */}
       <Route path="/" element={<Navigate to="/admin-login" replace />} />
 
-      {/* ENTRY / AUTH PAGES */}
       <Route path="/admin-login" element={<AdminLogin />} />
       <Route path="/forgot-password" element={<ForgotPassword />} />
 
-      {/* HOME / OVERVIEW / MESSAGES */}
       <Route path="/home" element={<Home />} />
       <Route path="/overview" element={<Overview />} />
       <Route path="/messages" element={<Messages/>} />
       <Route path="/messages-parents" element={<MessagesParents/>} />
 
-      {/* SETTINGS */}
       <Route path="/settings" element={<SettingsLayout />}>
         <Route index element={<SettingsMain />} />
         <Route path="preferences" element={<Preferences />} />
@@ -49,7 +45,6 @@ export default function AppRoutes() {
         <Route path="privacy" element={<Privacy />} />
       </Route>
 
-      {/* 404 */}
       <Route path="*" element={<div>404 - Fant ikke siden</div>} />
     </Routes>
   );

@@ -1,5 +1,3 @@
-/* Contact-only styles */
-
 .contact-input,
 .contact-textarea {
   box-sizing: border-box;
@@ -69,7 +67,6 @@
   margin-top: 6px;
 }
 
-/* Input wrapper / icon */
 .contact-input-wrap {
   position: relative;
 }
@@ -84,7 +81,6 @@
   pointer-events: none;
 }
 
-/* Inputs */
 .contact-input,
 .contact-textarea {
   width: 100%;
@@ -107,24 +103,21 @@
   padding: 16px 18px;
   font-size: 18px;
   resize: none;
-  min-height: 220px; /* mer proff “kort” følelse */
+  min-height: 220px;
   line-height: 1.4;
 }
 
-/* Placeholder (grå, proff) */
 .contact-input::placeholder,
 .contact-textarea::placeholder {
   color: rgba(11, 19, 84, 0.42);
 }
 
-/* Focus state (pen, ikke “brutal”) */
 .contact-input:focus,
 .contact-textarea:focus {
   border-color: rgba(255, 122, 61, 0.55);
   box-shadow: 0 0 0 4px rgba(255, 122, 61, 0.16), var(--shadow);
 }
 
-/* Desktop hover */
 @media (hover: hover) {
   .contact-input:hover,
   .contact-textarea:hover {
@@ -132,7 +125,6 @@
   }
 }
 
-/* Submit button */
 .contact-submit {
   margin-top: 18px;
   align-self: center;
@@ -151,22 +143,16 @@
   transform: translateY(1px);
 }
 
-/* Optional: hover polish */
 @media (hover: hover) {
   .contact-submit:hover {
     filter: brightness(0.98);
   }
 }
 
-/* Optional: disabled state (hvis du bruker disabled senere) */
 .contact-submit:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
-
-/* =========================
-   Modal / popup
-   ========================= */
 
 .modal-overlay {
   position: fixed;

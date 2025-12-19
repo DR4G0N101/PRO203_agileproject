@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import BurgerMenu from "../components/BurgerMenu";
-import BottomNav from "../components/BottomNav"; // ✅ lagt til
+import BottomNav from "../components/BottomNav";
 
 import "./overview.css";
 import "./settings/settings.css";
@@ -58,7 +58,6 @@ export default function Overview() {
 
   return (
     <div className="overview-container">
-      {/* Burger meny */}
       <BurgerMenu
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
@@ -66,7 +65,6 @@ export default function Overview() {
         sections={sections}
       />
 
-      {/* Header */}
       <div className="overview-header">
         <button
           type="button"
@@ -82,7 +80,6 @@ export default function Overview() {
 
       <p className="overview-subtitle">Rompetroll</p>
 
-      {/* Søk */}
       <div className="overview-search">
         <span className="overview-search-icon">🔍</span>
         <input
@@ -93,7 +90,6 @@ export default function Overview() {
         />
       </div>
 
-      {/* Liste */}
       <div className="overview-list">
         {filteredChildren.map((child, index) => (
           <div key={`${child.name}-${index}`} className="overview-card">
@@ -110,7 +106,6 @@ export default function Overview() {
         ))}
       </div>
 
-      {/* Bottom navigation */}
       <BottomNav />
     </div>
   );

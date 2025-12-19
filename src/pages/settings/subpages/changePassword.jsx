@@ -37,11 +37,10 @@ export default function ChangePassword() {
   const [newPw, setNewPw] = useState("");
   const [repeatPw, setRepeatPw] = useState("");
 
-  // modal
   const [modalOpen, setModalOpen] = useState(false);
   const [modalTitle, setModalTitle] = useState("");
-  const [modalVariant, setModalVariant] = useState("success"); // success | error
-  const [modalAction, setModalAction] = useState("ok"); // ok | login
+  const [modalVariant, setModalVariant] = useState("success");
+  const [modalAction, setModalAction] = useState("ok");
 
   const openModal = ({ title, variant = "success", action = "ok" }) => {
     setModalTitle(title);
@@ -54,7 +53,6 @@ export default function ChangePassword() {
 
   const handleModalButton = () => {
     if (modalAction === "login") {
-      // etter passordbytte: "logg ut" og gå til login (demo)
       navigate("/login");
       return;
     }
@@ -68,7 +66,6 @@ export default function ChangePassword() {
   const p1 = newPw.trim();
   const p2 = repeatPw.trim();
 
-  // 1) Nye passord må matche
   if (p1 !== p2) {
     openModal({
       title: "Passordene matcher ikke",
@@ -78,7 +75,6 @@ export default function ChangePassword() {
     return;
   }
 
-  // 2) Nytt passord kan ikke være samme som nåværende
   if (p1 === current) {
     openModal({
       title: "Du kan ikke bruke gammelt passord",
@@ -88,7 +84,7 @@ export default function ChangePassword() {
     return;
   }
 
-  // TODO: send til backend senere
+  // TODO: send til backend senere hvis utvikling skal skje
   console.log({ email, currentPw, newPw: p1 });
 
   openModal({
@@ -101,7 +97,6 @@ export default function ChangePassword() {
 
   return (
     <div className="settings-screen">
-      {/* Header */}
       <div className="cp-header">
         <button
           type="button"
@@ -169,7 +164,6 @@ export default function ChangePassword() {
         </button>
       </form>
 
-      {/* Modal */}
       {modalOpen && (
         <div className="modal-overlay" role="dialog" aria-modal="true" onClick={closeModal}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>

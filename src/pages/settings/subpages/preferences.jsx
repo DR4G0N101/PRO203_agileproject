@@ -24,7 +24,6 @@ function ToggleRow({ label, value, onToggle }) {
 export default function Preferences() {
   const navigate = useNavigate();
 
-  // Defaults
   const [push, setPush] = useState(true);
   const [sound, setSound] = useState(false);
   const [vibration, setVibration] = useState(true);
@@ -33,7 +32,6 @@ export default function Preferences() {
 
   return (
     <div className="settings-screen">
-      {/* Tom spacer for å matche høyden på SettingsMain (Merete + rolle) */}
       <div className="pref-spacer-header" />
 
       <div className="pref-header">

@@ -11,7 +11,6 @@
   padding-bottom: calc(120px + env(safe-area-inset-bottom));
 }
 
-/* Header */
 .ch-header {
   display: flex;
   align-items: center;
@@ -44,7 +43,6 @@
   padding: 0 20px;
 }
 
-/* Parent link button */
 .ch-parent-link {
   margin: 0 20px 16px;
   padding: 0;
@@ -58,13 +56,11 @@
   text-align: left;
 }
 
-/* List */
 .ch-list {
   margin-top: 6px;
   padding: 0;
 }
 
-/* Cards (floating like settings rows) */
 .ch-card {
   width: calc(100% - 32px);
   margin: 0 16px 16px;
@@ -125,7 +121,6 @@
   color: var(--orange, #ff7a3d);
 }
 
-/* Focus */
 .ch-menu-btn:focus-visible,
 .ch-parent-link:focus-visible,
 .ch-card:focus-visible {

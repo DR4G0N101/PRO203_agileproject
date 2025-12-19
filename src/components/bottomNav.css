@@ -42,17 +42,15 @@
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.02em;
-  opacity: 0; /* skjul tekst for å matche bildet */
+  opacity: 0;
   height: 0;
 }
 
-/* Active (highlight) */
 .bn-tab.is-active .bn-icon {
   background: var(--navy);
   color: #ffffff;
 }
 
-/* Optional: slight active press */
 .bn-tab:active .bn-icon {
   transform: translateY(1px);
 }

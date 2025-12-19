@@ -7,7 +7,7 @@ export default function BurgerMenu({
   title = "VELG",
   sections = [],
 }) {
-  // ESC for å lukke
+  
   useEffect(() => {
     if (!open) return;
 

@@ -93,7 +93,6 @@
   color: #b30000;
 }
 
-/* Logout modal buttons */
 .logout-actions {
   display: flex;
   justify-content: space-between;
@@ -112,13 +111,11 @@
   box-shadow: var(--shadow);
 }
 
-/* Blue – Avbryt */
 .logout-cancel {
   background: var(--navy);
   color: #fff;
 }
 
-/* Red – Logg ut */
 .logout-confirm {
   background: #7a001a;
   color: #fff;
@@ -130,5 +127,5 @@
 }
 
 .settings-screen {
-  padding-bottom: 120px; /* plass til bottom nav */
+  padding-bottom: 120px;
 }

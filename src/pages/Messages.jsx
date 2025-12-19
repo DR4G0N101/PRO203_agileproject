@@ -10,7 +10,7 @@ export default function Messages() {
   const navigate = useNavigate();
 
   const [menuOpen, setMenuOpen] = useState(false);
-  const [search, setSearch] = useState(""); // var false
+  const [search, setSearch] = useState("");
 
   const [showNew, setShowNew] = useState(false);
   const [contact, setContact] = useState("");
@@ -58,7 +58,6 @@ export default function Messages() {
         sections={sections}
       />
 
-      {/* Header */}
       <div className="msg-header">
         <button
           type="button"
@@ -73,7 +72,6 @@ export default function Messages() {
 
       <p className="msg-subtitle">Innboks</p>
 
-      {/* Search */}
       <div className="msg-search">
         <span className="msg-search-icon" aria-hidden="true">🔍</span>
         <input
@@ -84,7 +82,6 @@ export default function Messages() {
         />
       </div>
 
-      {/* Meldingsliste */}
       <div className="msg-list">
         {filteredMessages.map((m) => (
           <div key={m.id} className="msg-card">
@@ -97,7 +94,6 @@ export default function Messages() {
         ))}
       </div>
 
-      {/* New message button */}
       <button
         className="msg-fab"
         aria-label="Ny beskjed"
@@ -106,7 +102,6 @@ export default function Messages() {
         +
       </button>
 
-      {/* Popup */}
       {showNew && (
         <div className="msg-modal-overlay" onClick={() => setShowNew(false)}>
           <div className="msg-modal" onClick={(e) => e.stopPropagation()}>
@@ -132,7 +127,6 @@ export default function Messages() {
               onChange={(e) => setText(e.target.value)}
             />
 
-            {/*     Two buttons */}
             <div className="msg-actions">
               <button
                 type="button"

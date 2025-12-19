@@ -45,7 +45,6 @@ export default function ChildrenHome() {
         sections={sections}
       />
 
-      {/* Header */}
       <div className="ch-header">
         <button
           type="button"
@@ -60,7 +59,6 @@ export default function ChildrenHome() {
 
       <p className="ch-subtitle">Rompetroll</p>
 
-      {/* Link til foresatte */}
       <button
         type="button"
         className="ch-parent-link"
@@ -69,7 +67,6 @@ export default function ChildrenHome() {
         ➜ For foresatte
       </button>
 
-      {/* Kategorien-kort */}
       <div className="ch-list">
         {categories.map((item) => (
           <button

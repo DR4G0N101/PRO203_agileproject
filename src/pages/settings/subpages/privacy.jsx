@@ -7,7 +7,6 @@ export default function Privacy() {
 
   return (
     <div className="settings-screen">
-      {/* Header */}
       <div className="pr-header">
         <button
           type="button"

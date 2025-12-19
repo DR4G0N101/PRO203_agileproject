@@ -17,7 +17,6 @@ export default function MessagesParents() {
   const [contact, setContact] = useState("");
   const [text, setText] = useState("");
 
-  // Foreldre/foresatte (samme struktur som Messages)
   const messages = useMemo(
     () => [
       { id: 1, name: "Kari (mor)", text: "Kan du bekrefte hentetid i dag?", time: "09:12" },
@@ -37,7 +36,6 @@ export default function MessagesParents() {
     );
   }, [messages, search]);
 
-  // BurgerMenu: samme stil, men "Foreldre" aktiv (valgfritt)
   const sections = useMemo(
     () => [
       {
@@ -62,7 +60,6 @@ export default function MessagesParents() {
         sections={sections}
       />
 
-      {/* Header */}
       <div className="msg-header">
         <button
           type="button"
@@ -77,7 +74,6 @@ export default function MessagesParents() {
 
       <p className="msg-subtitle">Foreldre</p>
 
-      {/* Search */}
       <div className="msg-search">
         <span className="msg-search-icon" aria-hidden="true">🔍</span>
         <input
@@ -88,7 +84,6 @@ export default function MessagesParents() {
         />
       </div>
 
-      {/* Meldingsliste */}
       <div className="msg-list">
         {filteredMessages.map((m) => (
           <div key={m.id} className="msg-card">
@@ -101,7 +96,6 @@ export default function MessagesParents() {
         ))}
       </div>
 
-      {/* ➕ New message button */}
       <button
         className="msg-fab"
         aria-label="Ny beskjed"
@@ -110,7 +104,6 @@ export default function MessagesParents() {
         +
       </button>
 
-      {/* Popup */}
       {showNew && (
         <div className="msg-modal-overlay" onClick={() => setShowNew(false)}>
           <div className="msg-modal" onClick={(e) => e.stopPropagation()}>

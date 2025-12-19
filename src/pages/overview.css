@@ -1,4 +1,3 @@
-/* ===== Base safety ===== */
 * {
   box-sizing: border-box;
 }
@@ -13,28 +12,23 @@ body,
   background: var(--bg, #efefef);
   overflow-x: hidden;
 
-  /* match Settings typography */
   font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--navy, #0b1354);
 }
 
-/* ===== Overview page ===== */
 .overview-container {
   width: 100%;
   min-height: 100vh;
   background: var(--bg, #efefef);
   color: var(--navy, #0b1354);
 
-  /* edge-to-edge layout */
-  padding-top: 22px;           /* matches settings-screen feel */
+  padding-top: 22px;
   padding-left: 0;
   padding-right: 0;
 
-  /* space for BottomNav + iOS safe area */
   padding-bottom: calc(120px + env(safe-area-inset-bottom));
 }
 
-/* ===== Header ===== */
 .overview-header {
   display: flex;
   align-items: center;
@@ -50,7 +44,6 @@ body,
   border: none;
   padding: 6px 8px;
 
-  /* match Settings colors */
   color: var(--navy, #0b1354);
 }
 
@@ -58,20 +51,19 @@ body,
   font-size: 26px;
   font-weight: 800;
   margin: 0;
-  letter-spacing: 0.06em; /* like settings-kicker */
+  letter-spacing: 0.06em;
   color: var(--navy, #0b1354);
 }
 
 .overview-subtitle {
   margin: 10px 0 14px;
   font-size: 22px;
-  font-weight: 500; /* like settings-user__role */
+  font-weight: 500;
   color: var(--orange, #ff7a3d);
   padding-left: 20px;
   padding-right: 20px;
 }
 
-/* ===== Search (edge-to-edge) ===== */
 .overview-search {
   width: 100%;
   background: var(--card, #ffffff);
@@ -84,7 +76,6 @@ body,
 
   padding: 16px 20px;
 
-  /* match shadow feel */
   box-shadow: var(--shadow, 0 10px 24px rgba(0, 0, 0, 0.06));
 }
 
@@ -103,21 +94,18 @@ body,
   color: var(--navy, #0b1354);
 }
 
-/* ===== List ===== */
 .overview-list {
   width: 100%;
   margin-top: 18px;
 }
 
-/* ===== Floating cards (match settings rows) ===== */
 .overview-card {
   width: auto;
   background: var(--card, #ffffff);
 
-  /* floating cards */
   margin: 0 16px 16px;
-  border-radius: 10px; /* same radius as .s-row */
-  padding: 18px;       /* same “chunky” padding feel */
+  border-radius: 10px;
+  padding: 18px;
 
   display: flex;
   align-items: center;
@@ -125,35 +113,32 @@ body,
   box-shadow: var(--shadow, 0 10px 24px rgba(0, 0, 0, 0.06));
 }
 
-/* Avatar */
 .overview-avatar {
   width: 56px;
   height: 56px;
-  border-radius: 10px; /* aligns with settings row radius feel */
+  border-radius: 10px;
   object-fit: cover;
   margin-right: 16px;
 }
 
-/* Name */
 .overview-name {
-  font-size: 24px;   /* matches .s-row__label */
+  font-size: 24px;
   font-weight: 600;
   flex: 1;
   color: var(--navy, #0b1354);
 }
 
-/* ===== Bigger 3-dot menu ===== */
 .overview-card-menu {
-  font-size: 30px; /* slightly bigger */
+  font-size: 30px;
   line-height: 1;
   cursor: pointer;
   background: transparent;
   border: none;
-  padding: 10px 8px; /* larger touch area */
+  padding: 10px 8px;
   color: var(--orange, #ff7a3d);
 }
 
-/* ===== Interactions (match settings row behavior) ===== */
+
 .overview-card:active {
   transform: translateY(1px);
 }
@@ -166,6 +151,6 @@ body,
 .overview-menu-btn:focus-visible,
 .overview-card-menu:focus-visible,
 .overview-search-input:focus-visible {
-  outline: 3px solid rgba(255, 122, 61, 0.45); /* same as settings */
+  outline: 3px solid rgba(255, 122, 61, 0.45);
   outline-offset: 3px;
 }
